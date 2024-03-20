@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="input">
+        <h2>Input</h2>
+        <input type="Number" name="num" [(ngModel)]="num" placeholder="Enter Number..">
+        <button type="submit" (click)="getValue()">Submit</button>
+        <button type="submit" (click)="reset()">Reset</button>
+    </div>
+    <div class="output">
+        <ul>
+            <p id="text" style="font-size: 18px;"></p>
+        </ul>
+    </div>
+</div>

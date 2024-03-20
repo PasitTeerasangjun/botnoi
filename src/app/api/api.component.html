@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="API">
+        <h2>API</h2>
+        <h2>Pokemon</h2>
+        <div class="button">
+            <button type="submit" (click)="getPokemonStats()">Get Pokemon Doc</button>
+            <button type="submit" (click)="hidePokemon()">Hide Pokemon Doc</button>
+        </div>
+    </div>
+    <div class="api_container">
+        <div *ngFor="let item of stat ; index as i">
+            <ng-container *ngIf="i % 2 == 1">
+                <ul class="api" style="background-color: #f9f9f9">
+                    <img src={{item.stat.sprites.front_default}} />
+                    <img src={{item.stat.sprites.back_default}} />
+                    <br>
+                    Name : {{item.stat.name}}<br>
+                    Type 1: {{item.stat.types[0].type.name}}<br>
+
+                    <ng-container *ngIf="item.stat.types.length >= 2">
+                        Type 2: {{ item.stat.types[1].type.name }}<br>
+                    </ng-container>
+
+                    BaseStats: <br>
+                    {{item.stat.stats[0].stat.name}} -- {{item.stat.stats[0].base_stat}}<br>
+                    {{item.stat.stats[1].stat.name}} -- {{item.stat.stats[1].base_stat}}<br>
+                    {{item.stat.stats[2].stat.name}} -- {{item.stat.stats[2].base_stat}}<br>
+                    {{item.stat.stats[3].stat.name}} -- {{item.stat.stats[3].base_stat}}<br>
+                    {{item.stat.stats[4].stat.name}} -- {{item.stat.stats[4].base_stat}}<br>
+                    {{item.stat.stats[5].stat.name}} -- {{item.stat.stats[5].base_stat}}<br>
+                </ul>
+                <mat-divider></mat-divider>
+            </ng-container>
+            <ng-container *ngIf="i % 2 == 0">
+                <ul class="api" style="background-color: white">
+                    <img src={{item.stat.sprites.front_default}} />
+                    <img src={{item.stat.sprites.back_default}} />
+                    <br>
+                    Name : {{item.stat.name}}<br>
+                    Type 1: {{item.stat.types[0].type.name}}<br>
+
+                    <ng-container *ngIf="item.stat.types.length >= 2">
+                        Type 2: {{ item.stat.types[1].type.name }}<br>
+                    </ng-container>
+
+                    BaseStats: <br>
+                    {{item.stat.stats[0].stat.name}} -- {{item.stat.stats[0].base_stat}}<br>
+                    {{item.stat.stats[1].stat.name}} -- {{item.stat.stats[1].base_stat}}<br>
+                    {{item.stat.stats[2].stat.name}} -- {{item.stat.stats[2].base_stat}}<br>
+                    {{item.stat.stats[3].stat.name}} -- {{item.stat.stats[3].base_stat}}<br>
+                    {{item.stat.stats[4].stat.name}} -- {{item.stat.stats[4].base_stat}}<br>
+                    {{item.stat.stats[5].stat.name}} -- {{item.stat.stats[5].base_stat}}<br>
+                </ul>
+                <mat-divider></mat-divider>
+            </ng-container>
+        </div>
+    </div>
+</div>
