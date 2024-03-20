@@ -6,7 +6,7 @@
 ```
 cd filepath
 ```
-clone Repositories
+clone repository
 ```
 git clone https://github.com/PasitTeerasangjun/botnoi
 ```
